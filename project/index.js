@@ -1,6 +1,6 @@
 /**
  * 本文件是在构建 Wordle 程序过程中需要使用的脚本
- * ! 在编写代码之前请您务必仔细阅读每一行注释
+ * ! 在编写代码之前请您务必仔细阅读每一行注释并不要删除或修改注释
  * 其中部分函数已经给出，需要您根据实际需求进行补全
  * 函数的具体作用请参考注释
  * 请确保所有的 TODO 都被补全
@@ -75,7 +75,6 @@ start();
  * 6. 程序在什么时候会终止
  */
 function start() {
-  initialize();
   // TODO
 }
 
@@ -107,105 +106,7 @@ function render(letter) {
  * 2. 初始化时 state 变量处于怎样的状态
  */
 function initialize() {
-  generateRandomAnswer().then((res) => {
-    let answer = res.answer;
-    let wordSequence = res.wordSequence;
-    // console.log(answer);
-    // console.log(wordSequence);
-    for (let i = 1; i <= 30; i++) {
-      document.getElementById(i.toString()).innerHTML = "";
-      document.getElementById(i.toString()).style.backgroundColor = "white";
-    }
-    index = 1;
-    currentGuessTime = 0;
-    //键盘输入
-    document.getElementById("Q").addEventListener("click", function () {
-      render("q");
-    });
-    document.getElementById("W").addEventListener("click", function () {
-      render("w");
-    });
-    document.getElementById("E").addEventListener("click", function () {
-      render("e");
-    });
-    document.getElementById("R").addEventListener("click", function () {
-      render("r");
-    });
-    document.getElementById("T").addEventListener("click", function () {
-      render("t");
-    });
-    document.getElementById("Y").addEventListener("click", function () {
-      render("y");
-    });
-    document.getElementById("U").addEventListener("click", function () {
-      render("u");
-    });
-    document.getElementById("I").addEventListener("click", function () {
-      render("i");
-    });
-    document.getElementById("O").addEventListener("click", function () {
-      render("o");
-    });
-    document.getElementById("P").addEventListener("click", function () {
-      render("p");
-    });
-    document.getElementById("A").addEventListener("click", function () {
-      render("a");
-    });
-    document.getElementById("S").addEventListener("click", function () {
-      render("s");
-    });
-    document.getElementById("D").addEventListener("click", function () {
-      render("d");
-    });
-    document.getElementById("F").addEventListener("click", function () {
-      render("f");
-    });
-    document.getElementById("G").addEventListener("click", function () {
-      render("g");
-    });
-    document.getElementById("H").addEventListener("click", function () {
-      render("h");
-    });
-    document.getElementById("J").addEventListener("click", function () {
-      render("j");
-    });
-    document.getElementById("K").addEventListener("click", function () {
-      render("k");
-    });
-    document.getElementById("L").addEventListener("click", function () {
-      render("l");
-    });
-    document.getElementById("Z").addEventListener("click", function () {
-      render("z");
-    });
-    document.getElementById("X").addEventListener("click", function () {
-      render("x");
-    });
-    document.getElementById("C").addEventListener("click", function () {
-      render("c");
-    });
-    document.getElementById("V").addEventListener("click", function () {
-      render("v");
-    });
-    document.getElementById("B").addEventListener("click", function () {
-      render("b");
-    });
-    document.getElementById("N").addEventListener("click", function () {
-      render("n");
-    });
-    document.getElementById("M").addEventListener("click", function () {
-      render("m");
-    });
-    document.getElementById("ENTER").addEventListener("click", function () {
-      render("E");
-    });
-    document.getElementById("BACKSPACE").addEventListener("click", function () {
-      render("B");
-    });
-    //点击“重试”按钮后重新载入题目
-    document.getElementById("refresh").addEventListener("click", initialize);
-  });
+  // TODO
 }
 
 /**
@@ -213,7 +114,7 @@ function initialize() {
  *
  * 从题库中随机选取一个单词作为答案
  *
- * 单词文件位于 /static/words.json 中
+ * 题库文件为 words.json
  *
  * 请思考：
  * 1. 如何读取 json 文件
@@ -241,8 +142,6 @@ async function generateRandomAnswer() {
  */
 function isValidWord(word) {
   // TODO
-  // console.log(wordSequence);
-  return wordSequence.includes(word, 0);
 }
 
 /**
